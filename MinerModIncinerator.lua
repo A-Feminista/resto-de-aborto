@@ -11,27 +11,25 @@ button1.TextSize = 10
 button1.TextColor3 = Color3.fromRGB(255, 255, 255)
 button1.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
 
-local function ativarMassless()
+local function modIncinerator()
     local map = workspace:FindFirstChild("map")
     if map then
         local incinerator = map:FindFirstChild("Incinerator")
         if incinerator and incinerator:IsA("Model") then
             local console = incinerator:FindFirstChild("Console")
-
             for _, obj in ipairs(incinerator:GetDescendants()) do
                 if obj:IsA("BasePart") and obj.Name ~= "Lava" then
                     local inConsole = console and obj:IsDescendantOf(console)
                     if not inConsole then
                         obj.CanCollide = false
-                        obj.Transparency = 0.6
-                        
-                        -- Alterar material para SmoothPlastic, exceto se for Neon
+                        obj.CanQuery = false
+                        obj.CanTouch = false
+                        obj.Transparency = 0.8
                         if obj.Material ~= Enum.Material.Neon then
                             obj.Material = Enum.Material.SmoothPlastic
                         end
                     end
                 elseif obj:IsA("Decal") then
-                    -- Deletar qualquer Decal
                     obj:Destroy()
                 end
             end
@@ -39,4 +37,4 @@ local function ativarMassless()
     end
 end
 
-button1.MouseButton1Click:Connect(ativarMassless)
+button1.MouseButton1Click:Connect(modIncinerator)
