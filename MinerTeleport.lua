@@ -68,10 +68,10 @@ local function teleportMineral(reverse)
     end
 end
 
-createButton("Teleportar Bom", UDim2.new(0, 10, 0, 50), function()
+createButton("Teleportar Bom", UDim2.new(0, 10, 0, 60), function()
     teleportMineral(false)
 end)
 
-createButton("Teleportar Ruim", UDim2.new(0, 10, 0, 100), function()
+createButton("Teleportar Ruim", UDim2.new(0, 10, 0, 110), function()
     teleportMineral(true)
 end)
