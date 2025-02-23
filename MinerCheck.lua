@@ -57,9 +57,3 @@ local function checkMinerals()
 end
 
 button1.MouseButton1Click:Connect(checkMinerals)
-
-UserInputService.InputBegan:Connect(function(input, gameProcessed)
-    if not gameProcessed and input.KeyCode == Enum.KeyCode.T then
-        checkMinerals()
-    end
-end)
