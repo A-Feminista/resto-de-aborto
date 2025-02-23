@@ -55,5 +55,5 @@ local function checkMinerals()
         print("Pasta 'Minerals' não encontrada. ❌")
     end
 end
-
+print("Hi ^-^")
 button1.MouseButton1Click:Connect(checkMinerals)
