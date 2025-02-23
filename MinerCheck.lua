@@ -10,7 +10,7 @@ local mineralPriority = {
 
 local button1 = Instance.new("TextButton")
 button1.Parent = ScreenGui
-button1.Text = "Checar Minerais T"
+button1.Text = "Checar Minerais"
 button1.Size = UDim2.new(0, 150, 0, 50)
 button1.Position = UDim2.new(0, 5, 0, 0)
 button1.TextSize = 10
