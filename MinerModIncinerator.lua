@@ -24,7 +24,7 @@ local function modIncinerator()
                         obj.CanCollide = false
                         obj.CanQuery = false
                         obj.CanTouch = false
-                        obj.Transparency = 0.8
+                        obj.Transparency = 0.6
                         if obj.Material ~= Enum.Material.Neon then
                             obj.Material = Enum.Material.SmoothPlastic
                         end
