@@ -9,15 +9,15 @@ local mineralPriority = {
 }
 
 local function createButton(text, position, callback)
-    local button = Instance.new("TextButton")
-    button.Parent = ScreenGui
-    button.Text = text
-    button.Size = UDim2.new(0, 150, 0, 50)
-    button.Position = position
-    button.TextSize = 10
-    button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
-    button.MouseButton1Click:Connect(callback)
+    local buttonTp = Instance.new("TextButton")
+    buttonTp.Parent = ScreenGui
+    buttonTp.Text = text
+    buttonTp.Size = UDim2.new(0, 150, 0, 50)
+    buttonTp.Position = position
+    buttonTp.TextSize = 10
+    buttonTp.TextColor3 = Color3.fromRGB(255, 255, 255)
+    buttonTp.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
+    buttonTp.MouseButton1Click:Connect(callback)
 end
 
 local function teleportMineral(reverse)
@@ -28,7 +28,6 @@ local function teleportMineral(reverse)
     end
     local mineralParts = mineralsFolder:GetChildren()
     local start, stop, step = reverse and #mineralPriority or 1, reverse and 1 or #mineralPriority, reverse and -1 or 1
-    
     for i = start, stop, step do
         local mineral = mineralPriority[i]
         for _, mineralPart in pairs(mineralParts) do
@@ -60,11 +59,9 @@ local function teleportMineral(reverse)
                     textLabel.TextStrokeTransparency = 0
                     textLabel.TextSize = 20
                     textLabel.Font = Enum.Font.SourceSansBold
-                    
-                    print(mineral .. " teleportado e aplicado fogo e nome. ✅")
+
+                    print(mineral .. " teleportado. ✅")
                     return
-                else
-                    print(mineral .. " já foi teleportado.")
                 end
             end
         end
