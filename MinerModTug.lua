@@ -49,7 +49,7 @@ local function modTug()
     if trucksFolder then
         local tugCount = 0
         local sizeX = tonumber(inputX.Text) or 40
-        local sizeY = tonumber(inputY.Text) or 20
+        local sizeY = tonumber(inputY.Text) or 10
         local sizeZ = tonumber(inputZ.Text) or 5
         for _, model in pairs(trucksFolder:GetChildren()) do
             if model:IsA("Model") and model.Name == "Tug" then
