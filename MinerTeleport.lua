@@ -12,7 +12,7 @@ local function createButton(text, position, callback)
     local buttonTp = Instance.new("TextButton")
     buttonTp.Parent = ScreenGui
     buttonTp.Text = text
-    buttonTp.Size = UDim2.new(0, 150, 0, 50)
+    buttonTp.Size = UDim2.new(0, 100, 0, 50)
     buttonTp.Position = position
     buttonTp.TextSize = 10
     buttonTp.TextColor3 = Color3.fromRGB(255, 255, 255)
