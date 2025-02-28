@@ -3,7 +3,7 @@ ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local button1 = Instance.new("TextButton")
 button1.Parent = ScreenGui
-button1.Text = "Modificar Incenerador"
+button1.Text = "Modificar Mapa"
 button1.Size = UDim2.new(0, 150, 0, 50)
 button1.Position = UDim2.new(0, 10, 1, -40)
 button1.AnchorPoint = Vector2.new(0, 1)
@@ -21,6 +21,7 @@ local function modIncinerator()
                 if obj:IsA("BasePart") and obj.Name ~= "Lava" then
                     local inConsole = console and obj:IsDescendantOf(console)
                     if not inConsole then
+                        obj.CastShadow = false
                         obj.CanCollide = false
                         obj.CanQuery = false
                         obj.CanTouch = false
@@ -37,4 +38,27 @@ local function modIncinerator()
     end
 end
 
-button1.MouseButton1Click:Connect(modIncinerator)
+local function modRefinery()
+    local map = workspace:FindFirstChild("map")
+    if map then
+        local refinery = map:FindFirstChild("Refinery")
+        if refinery then
+            local interactive = refinery:FindFirstChild("Interactive")
+            if interactive then
+                local refineryPart = interactive:FindFirstChild("RefineryStaging")
+                if refineryPart and refineryPart:IsA("Part") then
+                    refineryPart.CastShadow = false
+                    refineryPart.Color = Color3.fromRGB(255, 0, 255)
+                    refineryPart.Material = Enum.Material.Neon
+                    refineryPart.Transparency = 1
+                    refineryPart.Size = Vector3.new(450, 25, 225)
+                end
+            end
+        end
+    end
+end
+
+button1.MouseButton1Click:Connect(function()
+    modIncinerator()
+    modRefinery()
+end)
