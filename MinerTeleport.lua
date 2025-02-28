@@ -59,8 +59,6 @@ local function teleportMineral(reverse)
                     textLabel.TextStrokeTransparency = 0
                     textLabel.TextSize = 20
                     textLabel.Font = Enum.Font.SourceSansBold
-
-                    print(mineral .. " teleportado. ✅")
                     return
                 end
             end
