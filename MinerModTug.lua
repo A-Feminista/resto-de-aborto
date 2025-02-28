@@ -1,15 +1,15 @@
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local button2 = Instance.new("TextButton")
-button2.Parent = ScreenGui
-button2.Text = "Modificar todos os Tugs"
-button2.Size = UDim2.new(0, 150, 0, 50)
-button2.Position = UDim2.new(0, 10, 1, -90)
-button2.AnchorPoint = Vector2.new(0, 1)
-button2.TextSize = 10
-button2.TextColor3 = Color3.fromRGB(255, 255, 255)
-button2.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
+local button = Instance.new("TextButton")
+button.Parent = ScreenGui
+button.Text = "Modificar Tugs"
+button.Size = UDim2.new(0, 150, 0, 50)
+button.Position = UDim2.new(0, 10, 1, -90)
+button.AnchorPoint = Vector2.new(0, 1)
+button.TextSize = 10
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
 
 local inputX = Instance.new("TextBox")
 inputX.Parent = ScreenGui
@@ -48,8 +48,8 @@ local function modTug()
     local trucksFolder = workspace:FindFirstChild("Trucks")
     if trucksFolder then
         local tugCount = 0
-        local sizeX = tonumber(inputX.Text) or 40
-        local sizeY = tonumber(inputY.Text) or 10
+        local sizeX = tonumber(inputX.Text) or 80
+        local sizeY = tonumber(inputY.Text) or 20
         local sizeZ = tonumber(inputZ.Text) or 5
         for _, model in pairs(trucksFolder:GetChildren()) do
             if model:IsA("Model") and model.Name == "Tug" then
@@ -80,4 +80,4 @@ local function modTug()
     end
 end
 
-button2.MouseButton1Click:Connect(modTug)
+button.MouseButton1Click:Connect(modTug)
