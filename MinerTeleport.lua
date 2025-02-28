@@ -2,10 +2,10 @@ local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 local mineralPriority = {
-    "Uranium", "Plutonium", "Emerald", "Sapphire", "Quartz", "Diamond",
-    "Iridium", "Obsidian", "Mercury", "Jade", "Lithium", "Cobalt",
-    "Gold", "Ruby", "Titanium", "Silver", "Aluminium", "Coal",
-    "Limestone", "Copper", "Bronze", "Nickel", "Iron"
+    "Plutonium", "Uranium", "Emerald", "Mercury", "Jade", "Obsidian",
+    "Sapphire", "Diamond", "Iridium", "Lithium", "Limestone", "Cobalt",
+    "Quartz", "Gold", "Ruby", "Titanium", "Coal", "Silver",
+    "Aluminium", "Copper", "Bronze", "Nickel", "Iron"
 }
 
 local function createButton(text, position, callback)
