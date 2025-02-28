@@ -1,15 +1,15 @@
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
-local button1 = Instance.new("TextButton")
-button1.Parent = ScreenGui
-button1.Text = "Modificar Mapa"
-button1.Size = UDim2.new(0, 150, 0, 50)
-button1.Position = UDim2.new(0, 10, 1, -40)
-button1.AnchorPoint = Vector2.new(0, 1)
-button1.TextSize = 10
-button1.TextColor3 = Color3.fromRGB(255, 255, 255)
-button1.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
+local button = Instance.new("TextButton")
+button.Parent = ScreenGui
+button.Text = "Modificar Mapa"
+button.Size = UDim2.new(0, 150, 0, 50)
+button.Position = UDim2.new(0, 10, 1, -40)
+button.AnchorPoint = Vector2.new(0, 1)
+button.TextSize = 10
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
 
 local function modIncinerator()
     local map = workspace:FindFirstChild("map")
@@ -25,7 +25,7 @@ local function modIncinerator()
                         obj.CanCollide = false
                         obj.CanQuery = false
                         obj.CanTouch = false
-                        obj.Transparency = 0.6
+                        obj.Transparency = 0.4
                         if obj.Material ~= Enum.Material.Neon then
                             obj.Material = Enum.Material.SmoothPlastic
                         end
@@ -58,7 +58,7 @@ local function modRefinery()
     end
 end
 
-button1.MouseButton1Click:Connect(function()
+button.MouseButton1Click:Connect(function()
     modIncinerator()
     modRefinery()
 end)
