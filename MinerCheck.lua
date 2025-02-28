@@ -8,14 +8,14 @@ local mineralPriority = {
     "Aluminium", "Copper", "Bronze", "Nickel", "Iron"
 }
 
-local button1 = Instance.new("TextButton")
-button1.Parent = ScreenGui
-button1.Text = "Checar Minerais"
-button1.Size = UDim2.new(0, 100, 0, 50)
-button1.Position = UDim2.new(0, 10, 0, 0)
-button1.TextSize = 10
-button1.TextColor3 = Color3.fromRGB(255, 255, 255)
-button1.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
+local button = Instance.new("TextButton")
+button.Parent = ScreenGui
+button.Text = "Checar Minerais"
+button.Size = UDim2.new(0, 100, 0, 50)
+button.Position = UDim2.new(0, 10, 0, 0)
+button.TextSize = 10
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.BackgroundColor3 = Color3.fromRGB(220, 160, 220)
 
 local function checkMinerals()
     local mineralsFolder = workspace:FindFirstChild("Minerals")
@@ -56,4 +56,4 @@ local function checkMinerals()
     end
 end
 
-button1.MouseButton1Click:Connect(checkMinerals)
+button.MouseButton1Click:Connect(checkMinerals)
