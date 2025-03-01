@@ -10,7 +10,7 @@ local mineralPriority = {
 
 local button = Instance.new("TextButton")
 button.Parent = ScreenGui
-button.Text = "Checar Minerais"
+button.Text = "Check Minerals"
 button.Size = UDim2.new(0, 100, 0, 50)
 button.Position = UDim2.new(0, 10, 0, 0)
 button.TextSize = 10
@@ -39,20 +39,18 @@ local function checkMinerals()
                 end
             end
         end
-        print("Minerais encontrados: 📜")
+        print("Minerals found: 📜")
         for _, mineral in ipairs(mineralPriority) do
             if mineralsCount[mineral] then
                 print(mineralsCount[mineral] .. "x " .. mineral)
             end
         end
         if next(unknowMinerals) ~= nil then
-            print("Minerais desconhecidos encontrados: 📜")
+            print("Unknow minerals found: 📜")
             for unknowMineral, count in pairs(unknowMinerals) do
                 print(count .. "x " .. unknowMineral)
             end
         end
-    else
-        print("Pasta 'Minerals' não encontrada. ❌")
     end
 end
 
